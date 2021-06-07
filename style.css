@@ -6,9 +6,16 @@ Author:         tagDiv
 Author URI: 	http://themeforest.net/user/tagDiv/portfolio
 Template:       Newspaper
 Version:        9.0c
+FII Version:  1.0
 */
 
 
+.fii-reading-time {
+    color: white;
+    display: inline-block;
+    margin-left: 22px;
+    vertical-align: text-bottom;
+}
 /*  ----------------------------------------------------------------------------
     This file will load automatically when the child theme is active. You can use it
     for custom CSS.
