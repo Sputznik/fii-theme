@@ -6,15 +6,30 @@ Author:         tagDiv
 Author URI: 	http://themeforest.net/user/tagDiv/portfolio
 Template:       Newspaper
 Version:        9.0c
-FII Version:  1.0
+FII Version:  1.1
 */
 
-
+/* for reading time */
 .fii-reading-time {
     color: white;
     display: inline-block;
     margin-left: 22px;
     vertical-align: text-bottom;
+}
+/* for coauthors */
+header .td-post-author-name.multiple-authors a {
+margin-right: 0;
+}
+header .td-post-author-name.multiple-authors .td-author-by {
+margin-right: 5px;
+}
+.td-post-author-name.multiple-authors a:after {
+content:",";
+margin-right: 6px;
+}
+.td-post-author-name.multiple-authors a:last-of-type:after {
+content:"";
+margin-right: 3px;
 }
 /*  ----------------------------------------------------------------------------
     This file will load automatically when the child theme is active. You can use it
