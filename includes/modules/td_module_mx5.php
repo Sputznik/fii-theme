@@ -30,7 +30,7 @@ class td_module_mx5 extends td_module {
                         <?php if (td_util::get_option('tds_category_module_mx5') == 'yes') { echo $this->get_category(); }?>
                         <?php echo $this->get_title($title_length);?>
                     </div>
-                    <div class="td-module-meta-info fii-coauthors">
+                    <div class="td-module-meta-info">
                         <?php echo $this->get_author();?>
                         <?php echo $this->get_date($modified_date, false, $time_ago, $time_ago_add_txt);?>
                     </div>
