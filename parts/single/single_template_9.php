@@ -1,5 +1,5 @@
 <?php
-// Template 3 - post-final-3.psd - full image + overlay full title
+// Template 9  -post-final-9.psd
 //get the global sidebar position from td_single_template_vars.php
 
 require_once( TDC_PATH_LEGACY_COMMON  . '/wp_booster/td_single_template_vars.php' );
@@ -11,38 +11,18 @@ global $loop_sidebar_position, $td_sidebar_position, $post;
 $td_mod_single = new td_module_single($post);
 
 ?>
-<article id="post-<?php echo $td_mod_single->post->ID;?>" class="<?php echo join(' ', get_post_class('td-post-template-3'));?> td-container-wrap" <?php echo $td_mod_single->get_item_scope();?>>
-    <div class="td-post-header td-container">
+<article id="post-<?php echo $td_mod_single->post->ID;?>" class="<?php echo join(' ', get_post_class('td-post-template-9'));?> td-container-wrap" <?php echo $td_mod_single->get_item_scope();?>>
+    <div class="td-container">
         <div class="td-crumb-container"><?php echo td_page_generator::get_single_breadcrumbs($td_mod_single->title); ?></div>
-        <div class="td-post-header-holder td-image-gradient">
+        <div class="td-post-featured-video">
             <?php
-            if ( td_global::$is_boxed_layout === true ) {
-                echo $td_mod_single->get_image('full');
+            // override the default featured image by the templates (single.php and home.php/index.php - blog loop)
+            if (!empty(td_global::$load_featured_img_from_template)) {
+                echo $td_mod_single->get_image(td_global::$load_featured_img_from_template);
             } else {
                 echo $td_mod_single->get_image('td_1068x0');
             }
             ?>
-
-            <header class="td-post-title">
-                <?php echo $td_mod_single->get_category(); ?>
-                <?php echo $td_mod_single->get_title();?>
-
-
-                <?php if (!empty($td_mod_single->td_post_theme_settings['td_subtitle'])) { ?>
-                    <p class="td-post-sub-title"><?php echo $td_mod_single->td_post_theme_settings['td_subtitle'];?></p>
-                <?php } ?>
-
-
-                <div class="td-module-meta-info">
-                    <?php echo $td_mod_single->get_author();?>
-                    <?php echo $td_mod_single->get_date(false, false);?>
-                    <?php echo $td_mod_single->get_views();?>
-                    <!--?php echo $td_mod_single->get_comments();?-->
-                    <!-- Reading time -->
-                    <div class="fii-reading-time" style="color:white;"><span><?php echo do_shortcode('[rt_reading_time postfix="min read"]') ?></span></div>
-                </div>
-
-            </header>
         </div>
     </div>
 
@@ -54,19 +34,19 @@ $td_mod_single = new td_module_single($post);
             switch ($loop_sidebar_position) {
                 default:
                     ?>
-                    <div class="td-pb-span8 td-main-content" role="main">
-                        <div class="td-ss-main-content">
-                            <?php
-                            require_once('loop-single-3.php');
-                            comments_template('', true);
-                            ?>
+                        <div class="td-pb-span8 td-main-content" role="main">
+                            <div class="td-ss-main-content">
+                                <?php
+                                require_once('loop-single-9.php');
+                                comments_template('', true);
+                                ?>
+                            </div>
                         </div>
-                    </div>
-                    <div class="td-pb-span4 td-main-sidebar" role="complementary">
-                        <div class="td-ss-main-sidebar">
-                            <?php get_sidebar(); ?>
+                        <div class="td-pb-span4 td-main-sidebar" role="complementary">
+                            <div class="td-ss-main-sidebar">
+                                <?php get_sidebar(); ?>
+                            </div>
                         </div>
-                    </div>
                     <?php
                     break;
 
@@ -75,7 +55,7 @@ $td_mod_single = new td_module_single($post);
                     <div class="td-pb-span8 td-main-content <?php echo $td_sidebar_position; ?>-content" role="main">
                         <div class="td-ss-main-content">
                             <?php
-                            require_once('loop-single-3.php');
+                            require_once('loop-single-9.php');
                             comments_template('', true);
                             ?>
                         </div>
@@ -93,7 +73,7 @@ $td_mod_single = new td_module_single($post);
                     <div class="td-pb-span12 td-main-content" role="main">
                         <div class="td-ss-main-content">
                             <?php
-                            require_once('loop-single-3.php');
+                            require_once('loop-single-9.php');
                             comments_template('', true);
                             ?>
                         </div>
