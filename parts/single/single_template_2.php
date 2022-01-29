@@ -34,10 +34,10 @@ $td_mod_single = new td_module_single($post);
                             <div class="td-module-meta-info">
                                 <?php echo $td_mod_single->get_author();?>
                                 <?php echo $td_mod_single->get_date(false, false);?>
+                                <!-- Reading time -->
+                                <div class="fii-reading-time"><span> - <?php echo do_shortcode('[rt_reading_time postfix="min read"]') ?></span></div>
                                 <?php echo $td_mod_single->get_views();?>
                                 <!--?php echo $td_mod_single->get_comments();?-->
-                                <!-- Reading time -->
-                                <div class="fii-reading-time" style="color:white;"><span><?php echo do_shortcode('[rt_reading_time postfix="min read"]') ?></span></div>
                             </div>
 
                         </header>
