@@ -31,7 +31,7 @@ if (have_posts()) {
                     <!--?php echo $td_mod_single->get_comments();?-->
                     <?php echo $td_mod_single->get_views();?>
                     <!-- Reading time -->
-                    <div class="fii-reading-time"><span> - <?php echo do_shortcode('[rt_reading_time postfix="min read"]') ?></span></div>
+                    <div class="fii-reading-time fii-rt-alt"><span><?php echo do_shortcode('[rt_reading_time postfix="min read"]') ?></span></div>
                 </div>
 
             </header>
